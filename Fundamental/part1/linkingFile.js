@@ -11,7 +11,7 @@ console.log(firstname);
 let $new = 'yeah'; // or use '_' symbol (not recomended using reserved keyword)
 console.log($new);
 
-//let Person = 'DIO'; use uppercase for spesific usecase (use lowercase instead)
+//let Person = 'DIO'; use uppercase variabel for spesific usecase (use lowercase instead)
 
 let job1 = 'programmer'
 let myFirstJob = 'programmer' //this is much more descriptive than above
