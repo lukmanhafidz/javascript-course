@@ -9,5 +9,3 @@ console.log(typeof testVariable) //number
 
 let variable
 console.log(typeof variable) //undefined
-
-let
