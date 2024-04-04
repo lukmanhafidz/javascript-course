@@ -1,5 +1,7 @@
 let sarahAge = 15
 
+if (sarahAge === 15) console.log("sarah is 15 years old") //no need for bracket
+
 if (sarahAge >= 18){ 
     console.log(`sarah can start driving`)
 } else{
