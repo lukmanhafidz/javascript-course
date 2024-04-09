@@ -15,6 +15,7 @@ TEST DATA: Test with different bill values: 275, 40, and 430*/
 
 
 const bill = 430;
+
 let tip = bill >= 50 && bill <= 300 ? 15 : 20
 
 tip = bill * (tip/100) 
