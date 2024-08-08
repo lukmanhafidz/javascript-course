@@ -60,7 +60,7 @@ checkWinner(resultKoalas, resultDolphins)
 // const resultDolphins = calcAverage(scoreDolphins);
 // const resultKoalas = calcAverage(scoreKoalas);
 
-// console.log(checkWinner(resultKoalas, resultDolphins))
+// checkWinner(resultKoalas, resultDolphins)
 
 //3rd round
 // var scoreDolphins = [44,23,71];
@@ -69,6 +69,6 @@ checkWinner(resultKoalas, resultDolphins)
 // const resultDolphins = calcAverage(scoreDolphins);
 // const resultKoalas = calcAverage(scoreKoalas);
 
-// console.log(checkWinner(resultKoalas, resultDolphins))
+// checkWinner(resultKoalas, resultDolphins)
 
 
