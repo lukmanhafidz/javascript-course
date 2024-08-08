@@ -5,9 +5,16 @@ function logging(data) {
 //calling / running / invoking function
 logging('lorem ipsum'); 
 
+function cutFruitPieces(pieces, fruit){
+    return fruit * pieces;
+}
+
 function fruitProcessor(apples, oranges) {
-    const juice = `Juice with ${apples} apples &
-    ${oranges} oranges`;
+    const applePieces = cutFruitPieces(4, apples);// calling another function
+    const orangePieces = cutFruitPieces(4, oranges);
+
+    const juice = `Juice with ${applePieces} piece of apples &
+    ${orangePieces} pieces of oranges`;
 
     return juice;
 }
