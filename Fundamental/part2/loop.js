@@ -98,6 +98,6 @@ for (let rep = 1; rep <= 10; rep++) {
   
   while (dice !== 6) {
     console.log(`You rolled a ${dice}`);
-    dice = Math.trunc(Math.random() * 6) + 1;
+    dice = Math.trunc(Math.random() * 6) + 1; //need to be re assign to avoid infinite value
     if (dice === 6) console.log('Loop is about to end...');
   }
