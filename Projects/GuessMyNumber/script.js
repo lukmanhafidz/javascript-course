@@ -29,6 +29,14 @@ function loseScore(score, message) {
   return score;
 }
 
+function winGame() {
+  document.querySelector('.message').textContent =
+    '🎉 You have won the game 🎉';
+  document.querySelector('.number').textContent = secretNumber;
+  document.querySelector('body').style.backgroundColor = '#60b347';
+  document.querySelector('.number').style.width = '30rem';
+}
+
 document.querySelector('.check').addEventListener('click', function () {
   const numberInput = Number(document.querySelector('.guess').value);
 
@@ -47,9 +55,7 @@ document.querySelector('.check').addEventListener('click', function () {
       break;
 
     default:
-      document.querySelector('.message').textContent =
-        '🎉 You have won the game 🎉';
-      document.querySelector('.number').textContent = secretNumber;
+      winGame();
       break;
   }
 });
