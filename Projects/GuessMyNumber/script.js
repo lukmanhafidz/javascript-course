@@ -14,16 +14,14 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 function loseScore(score, message) {
-  if (score === 0) {
+  if (score === 1) {
     document.querySelector('.message').textContent =
       '💥 You have lost the game 💥';
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#b82525';
-
-    return score;
+  } else {
+    document.querySelector('.message').textContent = `${message}`;
   }
-
-  document.querySelector('.message').textContent = `${message}`;
 
   score--;
   document.querySelector('.score').textContent = score;
