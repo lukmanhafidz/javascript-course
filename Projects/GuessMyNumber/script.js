@@ -18,6 +18,8 @@ function loseScore(score, message) {
     document.querySelector('.message').textContent =
       '💥 You have lost the game 💥';
     document.querySelector('.number').textContent = secretNumber;
+    document.querySelector('body').style.backgroundColor = '#b82525';
+
     return score;
   }
 
