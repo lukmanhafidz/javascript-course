@@ -9,9 +9,49 @@ console.log(document.querySelector('.message').textContent); //DOM example in ja
 // document.querySelector('.number').textContent = 30;
 // document.querySelector('.guess').value = 23;
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
+let highscore = 0;
+
+document.querySelector('.check').addEventListener('click', function () {
+  const numberInput = Number(document.querySelector('.guess').value);
+
+  switch (true) {
+    case numberInput === 0:
+      document.querySelector('.message').textContent =
+        '⛔️ Number Cant be Empty or Zero ⛔️';
+      break;
+
+    case numberInput > secretNumber:
+      score = loseScore(score, '🚀 Number is too high 🚀');
+      break;
+
+    case numberInput < secretNumber:
+      score = loseScore(score, '🎢 Number is too low 🎢');
+      break;
+
+    default:
+      winGame();
+      setHighscore(score, highscore);
+      break;
+  }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  //   location.reload(); //easier and faster way :), it'll reload the page
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = ' ';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').style.width = '15rem';
+  document.querySelector('body').style.backgroundColor = '#222';
+
+  return score, secretNumber;
+});
 
 function loseScore(score, message) {
   if (score === 1) {
@@ -37,25 +77,11 @@ function winGame() {
   document.querySelector('.number').style.width = '30rem';
 }
 
-document.querySelector('.check').addEventListener('click', function () {
-  const numberInput = Number(document.querySelector('.guess').value);
-
-  switch (true) {
-    case numberInput === 0:
-      document.querySelector('.message').textContent =
-        '⛔️ Number Cant be Empty or Zero ⛔️';
-      break;
-
-    case numberInput > secretNumber:
-      score = loseScore(score, '🚀 Number is too high 🚀');
-      break;
-
-    case numberInput < secretNumber:
-      score = loseScore(score, '🎢 Number is too low 🎢');
-      break;
-
-    default:
-      winGame();
-      break;
+function setHighscore(score, highscore) {
+  if (score > highscore) {
+    highscore = score;
+    document.querySelector('.highscore').textContent = highscore;
   }
-});
+
+  return score, highscore;
+}
