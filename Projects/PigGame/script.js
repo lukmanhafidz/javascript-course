@@ -2,17 +2,38 @@
 //init variable
 const player1 = document.querySelector('.player--1');
 const player2 = document.querySelector('.player--2');
+const playerAll = document.querySelectorAll('.player');
 
 const dice = document.querySelector('.dice');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnNew = document.querySelector('.btn--new');
 
-let activePlayer = 1;
-let currentScore = 0;
-let totalScore = [0, 0];
-let gameOver = true;
+let activePlayer, currentScore, totalScore, gameOver;
 
-dice.style.display = 'none'; //hide dice img
+function init() {
+  activePlayer = 1;
+  currentScore = 0;
+  totalScore = [0, 0];
+  gameOver = true;
+
+  dice.style.display = 'none'; //hide dice img
+  document.getElementById(`current--1`).textContent = 0;
+  document.getElementById(`current--2`).textContent = 0;
+  document.getElementById(`score--1`).textContent = 0;
+  document.getElementById(`score--2`).textContent = 0;
+
+  playerAll.forEach(player => {
+    player.classList.remove('player--winner');
+  });
+
+  player1.classList.add('player--active');
+  player2.classList.remove('player--active');
+
+  btnRoll.disabled = false;
+  btnHold.disabled = false;
+}
+init();
 
 //Roll Dice Function
 btnRoll.addEventListener('click', function () {
@@ -52,6 +73,8 @@ btnHold.addEventListener('click', function () {
     activePlayer = swtichPlayer(activePlayer);
   }
 });
+
+btnNew.addEventListener('click', init);
 
 function swtichPlayer(activePlayer) {
   currentScore = 0;
