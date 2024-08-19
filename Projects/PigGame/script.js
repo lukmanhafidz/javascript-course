@@ -44,6 +44,7 @@ btnHold.addEventListener('click', function () {
       .classList.add('player--winner');
 
     document.getElementById(`current--${activePlayer}`).textContent = 0;
+    dice.style.display = 'none';
 
     gameOver = true;
     isGameOver(gameOver);
