@@ -1,3 +1,5 @@
+'use strict';
+
 const rest1 = {
   name: 'Capri',
   // numGuests: 20,
