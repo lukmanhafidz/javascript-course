@@ -42,7 +42,6 @@ document.querySelector('button').addEventListener('click', function() {
         }
 
         let textParts = text.toLowerCase().split('_')
-        // console.log(textParts)
         console.log(textParts[0] +  textParts[1].replace(textParts[1][0], textParts[1][0].toUpperCase()))
     }
 })
